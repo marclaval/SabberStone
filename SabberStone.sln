@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.10
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{261600B6-3820-499E-8186-F2589B9F5049}"
 	ProjectSection(SolutionItems) = preProject
@@ -38,7 +38,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SabberStoneHsReplay", "core
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SabberStoneBuildCardSet", "core-extensions\SabberStoneBuildCardSet\SabberStoneBuildCardSet.csproj", "{48AE839D-1944-45E9-8E38-016C5E7D399B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HSGrammar", "core-extensions\HSGrammar\HSGrammar.csproj", "{64EE164C-B894-4F1A-A734-5B17ADEA1FDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HSGrammar", "core-extensions\HSGrammar\HSGrammar.csproj", "{64EE164C-B894-4F1A-A734-5B17ADEA1FDD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandBoxAi", "core-extensions\SandBoxAi\SandBoxAi.csproj", "{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -194,6 +196,18 @@ Global
 		{64EE164C-B894-4F1A-A734-5B17ADEA1FDD}.Release|x64.Build.0 = Release|Any CPU
 		{64EE164C-B894-4F1A-A734-5B17ADEA1FDD}.Release|x86.ActiveCfg = Release|Any CPU
 		{64EE164C-B894-4F1A-A734-5B17ADEA1FDD}.Release|x86.Build.0 = Release|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Debug|x64.Build.0 = Debug|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Debug|x86.Build.0 = Debug|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Release|x64.ActiveCfg = Release|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Release|x64.Build.0 = Release|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Release|x86.ActiveCfg = Release|Any CPU
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,9 +224,10 @@ Global
 		{34049E7A-325F-4C9F-871E-B7656CD6AD4B} = {1CB803D0-BDFB-4C7E-A547-F6BF4BB290DD}
 		{48AE839D-1944-45E9-8E38-016C5E7D399B} = {1CB803D0-BDFB-4C7E-A547-F6BF4BB290DD}
 		{64EE164C-B894-4F1A-A734-5B17ADEA1FDD} = {1CB803D0-BDFB-4C7E-A547-F6BF4BB290DD}
+		{69B9371B-93FA-45A2-8DC1-C61B0A06FECE} = {5CD57D98-F9FA-4402-806A-8FF418CF253E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {FA3771F8-9411-4FE3-A2C0-6EE7CFF48B17}
 		VisualSVNWorkingCopyRoot = .
+		SolutionGuid = {FA3771F8-9411-4FE3-A2C0-6EE7CFF48B17}
 	EndGlobalSection
 EndGlobal
