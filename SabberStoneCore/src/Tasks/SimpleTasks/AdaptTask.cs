@@ -47,7 +47,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 			var resultCards = new List<Card>();
 			while (resultCards.Count < 3)
 			{
-				Card adaptCard = Util.Choose<Card>(totAdaptCards);
+                Card adaptCard = Game.RandomController.PickAdaptChoices(Type, Source, Target, totAdaptCards);
 				resultCards.Add(adaptCard);
 				totAdaptCards.Remove(adaptCard);
 			}

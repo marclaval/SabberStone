@@ -56,7 +56,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 			}
 
 			// shuffle list randomly if needed
-			entities = RandomFlag ? entities.OrderBy(x => Util.Random.Next()).ToList() : entities;
+			entities = RandomFlag ? Game.RandomController.SortSummonCopy(Source, Target, entities) : entities;
 
 			if (RandomFlag)
 				Game.OnRandomHappened(true);

@@ -162,6 +162,12 @@ namespace SabberStoneCore.Config
 		/// <value><c>true</c> if Mulligan must be skipped; otherwise, <c>false</c>.</value>
 		public bool SkipMulligan { get; set; } = true;
 
+        /// <summary>
+        /// Gets or sets the <see cref="RandomController"/> for the <see cref="Game"/>.
+        /// </summary>
+        /// <value><c>true</c> if Mulligan must be skipped; otherwise, <c>false</c>.</value>
+        public RandomController RandomController { get; set; } = new RandomController();
+
 		/// <summary>
 		/// Clones this instance.
 		/// </summary>

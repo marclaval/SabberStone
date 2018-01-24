@@ -47,7 +47,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 				var cardList = new List<Card>();
 				while (cardList.Count < 3)
 				{
-					Card card = Util.Choose<Card>(cardIdList);
+                    Card card = Game.RandomController.PickPotionSpell(Source, Target, cardIdList);
 					cardList.Add(card);
 					cardIdList.RemoveAll(p => p == card);
 				}

@@ -40,7 +40,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 				}
 				if (playableMinions.Count > 0)
 				{
-					summonEntity = Util.Choose(playableMinions);
+					summonEntity = Game.RandomController.PickRecruit(Source, Target, playableMinions);
 					if (RemoveFromStack)
 					{
 						Playables.Remove(summonEntity);
@@ -59,7 +59,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 				}
 				if (playableMinions.Count > 0)
 				{
-					summonEntity = Util.Choose(playableMinions);
+					summonEntity = Game.RandomController.PickRecruit(Source, Target, playableMinions);
 				}
 			}
 

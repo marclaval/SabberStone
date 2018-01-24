@@ -10,7 +10,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 	//		if (CardIds.Count == 0)
 	//			return TaskState.STOP;
 
-	//		IPlayable randomCard = Entity.FromCard(Controller, Cards.FromId(Util.Choose<string>(CardIds)));
+    //		IPlayable randomCard = Entity.FromCard(Controller, Cards.FromId(Game.RandomController.UnusedPickCardAsString(CardIds)));
 	//		Playables.Clear();
 	//		Playables.Add(randomCard);
 

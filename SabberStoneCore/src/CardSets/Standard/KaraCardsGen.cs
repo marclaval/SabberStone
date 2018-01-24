@@ -398,9 +398,10 @@ namespace SabberStoneCore.CardSets.Standard
 								"CS2_052",
 								"NEW1_009"
 							};
+                            string totem = controller.Game.RandomController.PickBasicTotem(basicTotem);
 							return new List<IPlayable>
 							{
-								Entity.FromCard(controller, Cards.FromId(Util.Choose(basicTotem)))
+                            Entity.FromCard(controller, Cards.FromId(totem))
 							};
 						}),
 						new SummonTask())

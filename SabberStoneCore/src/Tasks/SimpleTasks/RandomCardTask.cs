@@ -99,7 +99,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 			IReadOnlyList<Card> cardsList = GetCardList(Source, _cardType, _cardClass, _cardSet, _race, _gameTagFilter);
 
 
-			IPlayable randomCard = Entity.FromCard(_opposite ? Controller.Opponent : Controller, Util.Choose(cardsList));
+            IPlayable randomCard = Entity.FromCard(_opposite ? Controller.Opponent : Controller, Game.RandomController.PickCard(this, Source, Target, cardsList.ToList()));
 			Playables = new List<IPlayable> { randomCard };
 
 			Game.OnRandomHappened(true);

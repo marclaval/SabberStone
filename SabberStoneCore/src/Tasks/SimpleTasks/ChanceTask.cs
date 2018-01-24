@@ -13,7 +13,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 
 		public override TaskState Process()
 		{
-			int random = Util.Random.Next(0, 2);
+			int random = Game.RandomController.CoinFlip(Source, Target);
 
 			if (!UseFlag)
 			{

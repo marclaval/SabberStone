@@ -46,7 +46,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 			}
 			else
 			{
-				IPlayable randomCard = Entity.FromCard(Controller, Cards.FromId(Util.Choose<string>(source.Card.Entourage)));
+                IPlayable randomCard = Entity.FromCard(Controller, Cards.FromId(Game.RandomController.PickEntourage(Source, Target, source.Card.Entourage)));
 				Playables = new List<IPlayable> { randomCard };
 			}
 

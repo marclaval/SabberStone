@@ -96,7 +96,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 			Playables = new List<IPlayable>();
 			for (int i = 0; i < Amount && entities.Count > 0; i++)
 			{
-				IPlayable randPlayable = Util.Choose<IPlayable>(entities);
+                IPlayable randPlayable = Game.RandomController.PickTarget(Type, Source, Target, entities);
 				entities.Remove(randPlayable);
 				Playables.Add(randPlayable);
 			}

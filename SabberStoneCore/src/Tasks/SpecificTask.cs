@@ -213,10 +213,10 @@ namespace SabberStoneCore.Tasks
 						}
 					}
 
-					var result = new List<Card> { Util.Choose(_glimmerrootMemory1) };
+                    var result = new List<Card> { controller.Game.RandomController.PickCard("CuriousGlimmerroot1", _glimmerrootMemory1.ToList()) };
 					while (result.Count < 3)
 					{
-						Card pick = Util.Choose(_glimmerrootMemory3);
+                        Card pick = controller.Game.RandomController.PickCard("CuriousGlimmerroot2", _glimmerrootMemory3.ToList());
 						if (_glimmerrootMemory2.Contains(pick.AssetId) || result.Contains(pick))
 							continue;
 						result.Add(pick);
@@ -322,7 +322,7 @@ namespace SabberStoneCore.Tasks
 					}
 
 
-
+					// TODO: control randomness of BuildABeast
 					var first = new List<Card>();
 					var second = new List<Card>();
 					int numToSelect = 3;
@@ -478,7 +478,7 @@ namespace SabberStoneCore.Tasks
 				CardClass randClass = 0;
 				do
 				{
-					randClass = (CardClass) Random.Next(2, 11);
+                    randClass = (CardClass) Game.RandomController.GetNumber(2, 11, Source, Target);
 				} while (randClass == CardClass.WARLOCK);
 					
 				// replace Hero Power

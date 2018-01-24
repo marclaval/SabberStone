@@ -91,7 +91,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 			{
 				while (resultCards.Count < 3 && totcardsToDiscover.Count > 0)
 				{
-					Card discoveredCard = Util.Choose(totcardsToDiscover);
+                    Card discoveredCard = Game.RandomController.PickDiscoverChoices(DiscoverType, Source, Target, totcardsToDiscover);
 					resultCards.Add(discoveredCard);
 					// remove all cards matching the discovered one, 
 					// need because class cards are duplicated 4 x times
@@ -113,7 +113,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 				foreach (List<Card> classDiscover in cardsToDiscover)
 				{
 					resultCards.ForEach(p => classDiscover.Remove(p));
-					resultCards.Add(Util.Choose<Card>(classDiscover));
+                    resultCards.Add(Game.RandomController.PickDiscoverChoices(DiscoverType, Source, Target, classDiscover));
 				}
 			}
 
@@ -513,7 +513,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 		private List<Card>[] GetFilter(Func<IEnumerable<Card>, IEnumerable<Card>> filter)
 		{
 			Dictionary<CardClass, IEnumerable<Card>> cardSet = Cards.FormatTypeClassCards(Game.FormatType);
-			CardClass heroClass = Controller.BaseClass != CardClass.NEUTRAL ? Controller.BaseClass : Util.RandomElement(Cards.HeroClasses);
+			CardClass heroClass = Controller.BaseClass != CardClass.NEUTRAL ? Controller.BaseClass : Game.RandomController.PickHeroClass(Source, Target, Cards.HeroClasses);
 			IEnumerable<Card> nonClassCards = filter.Invoke(cardSet[heroClass].Where(p => p.Class != heroClass));
 			IEnumerable<Card> classCards = filter.Invoke(cardSet[heroClass].Where(p => p.Class == heroClass && !p.Tags.ContainsKey(GameTag.QUEST)));
 			return new[] { nonClassCards.ToList(), classCards.ToList() };

@@ -40,7 +40,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 			Card randCard = null;
 		    do
 		    {
-			    randCard = cards[Random.Next(cards.Length)];
+                randCard = Game.RandomController.PickSpell(Source, Target, cards);
 		    } while (!randCard.Implemented);
 
 		    Spell spellToCast = (Spell)Target ?? (Spell)Entity.FromCard(Source.Controller, randCard);
@@ -58,7 +58,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 					!Game.Logging ? "" : $"{spellToCast}'s target is randomly selected to {randTarget}");
 			}
 
-			int randChooseOne = Random.Next(1, 3);
+            int randChooseOne = Game.RandomController.GetNumber(1, 3, Source, Target);
 
 			Generic.CastSpell.Invoke(Source.Controller, spellToCast, randTarget, randChooseOne);
 

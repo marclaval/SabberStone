@@ -44,7 +44,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 				int randAmount = 0;
 				if (RandAmount > 0)
 				{
-					randAmount = Random.Next(0, RandAmount + 1);
+                    randAmount = Game.RandomController.RandomDamage(RandAmount, Source, Target);
 					Game.OnRandomHappened(true);
 				}
 

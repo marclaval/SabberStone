@@ -41,7 +41,7 @@ namespace SabberStoneCore.Model.Zones
 			Game.Log(LogLevel.INFO, BlockType.PLAY, "Deck", !Game.Logging ? "" : $"Deck[{Game.FormatType}] from {Controller.Name} filling up with {cardsToAdd} random cards.");
 			while (cardsToAdd > 0)
 			{
-				Card card = Util.Choose<Card>(cards.ToList());
+                Card card = Game.RandomController.PickCard("FillDeck", cards.ToList());
 
 				// don't add cards that have to be excluded here.
 				if (excludeIds != null && excludeIds.Contains(card.Id))

@@ -112,7 +112,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 
 		public override TaskState Process()
 		{
-			Number = Util.Random.Next(Min, Max + 1);
+			Number = Game.RandomController.GetNumber(Min, Max + 1, Source, Target);
 			return TaskState.COMPLETE;
 		}
 

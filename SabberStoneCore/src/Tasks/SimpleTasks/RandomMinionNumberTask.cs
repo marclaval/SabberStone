@@ -32,7 +32,7 @@ namespace SabberStoneCore.Tasks.SimpleTasks
 					return TaskState.STOP;
 			}
 
-			IPlayable playable = Entity.FromCard(Controller, Util.Choose(cardsList));
+			IPlayable playable = Entity.FromCard(Controller, Game.RandomController.PickMinionNumber(Number, Source, Target, cardsList));
 			Playables = new List<IPlayable> { playable };
 
 			Game.OnRandomHappened(true);
