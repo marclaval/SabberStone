@@ -166,7 +166,7 @@ namespace SabberStoneCore.Config
         /// Gets or sets the <see cref="RandomController"/> for the <see cref="Game"/>.
         /// </summary>
         /// <value><c>true</c> if Mulligan must be skipped; otherwise, <c>false</c>.</value>
-        public RandomController RandomController { get; set; } = new RandomController();
+        public IRandomController RandomController { get; set; } = new RandomController();
 
 		/// <summary>
 		/// Gets or sets a value indicating whether <see cref="Game"/> should execute the next step automatically.

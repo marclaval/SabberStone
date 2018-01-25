@@ -167,7 +167,7 @@ namespace SabberStoneCore.Model
         /// <summary>
 		/// Gets the <see cref="RandomController"/> for the <see cref="Game"/>.
         /// </summary>
-        public RandomController RandomController => _gameConfig.RandomController;
+        public IRandomController RandomController => _gameConfig.RandomController;
 
 		/// <summary>
 		/// Gets the AutoNextStep flag for the <see cref="Game"/>.
@@ -275,8 +275,9 @@ namespace SabberStoneCore.Model
 			OneTurnEffectEnchantments = new List<Enchantment>();
 		}
 
+
 		/// <summary> A copy constructor. </summary>
-		private Game(Game game, bool logging = false) : base(null, game)
+		private Game(Game game, bool logging = false, bool autoNextStep = true, IRandomController randomController = null) : base(null, game)
 		{
 			IdEntityDic = new Dictionary<int, IPlayable>(game.IdEntityDic.Count);
 			Game = this;
@@ -290,6 +291,8 @@ namespace SabberStoneCore.Model
 
 			_gameConfig = game._gameConfig.Clone();
 			_gameConfig.Logging = logging;
+			_gameConfig.AutoNextStep = autoNextStep;
+			_gameConfig.RandomController = randomController ?? new RandomController();
 
 			CloneIndex = game.CloneIndex + $"[{game.NextCloneIndex++}]";
 
@@ -1010,9 +1013,9 @@ namespace SabberStoneCore.Model
 		/// Performs a deep copy of this game instance and returns the result.
 		/// </summary>
 		/// <returns></returns>
-		public Game Clone(bool logging = false)
+		public Game Clone(bool logging = false, bool autoNextStep = true, IRandomController randomController = null)
 		{
-			return new Game(this, logging);
+			return new Game(this, logging, autoNextStep, randomController);
 		}
 
 		/// <summary>Builds and stores a logentry, from the specified log message.</summary>
