@@ -30,7 +30,8 @@ namespace SabberStoneCore.Model
 
 			if (t == GameTag.NEXT_STEP)
 			{
-				NextStepEvent(sender as Game, (Step)newValue);
+				if (_game.AutoNextStep)
+                    NextStepEvent(sender as Game, (Step)newValue);
 			}
 		}
 

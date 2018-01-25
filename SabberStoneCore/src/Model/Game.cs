@@ -164,9 +164,15 @@ namespace SabberStoneCore.Model
 		/// <value><c>true</c> if history building is enabled; otherwise, <c>false</c>.</value>
 		public bool History => _gameConfig.History;
 
-        /// <summary>Gets the <see cref="RandomController"/> for the <see cref="Game"/>.
+        /// <summary>
+		/// Gets the <see cref="RandomController"/> for the <see cref="Game"/>.
         /// </summary>
         public RandomController RandomController => _gameConfig.RandomController;
+
+		/// <summary>
+		/// Gets the AutoNextStep flag for the <see cref="Game"/>.
+		/// </summary>
+		public bool AutoNextStep => _gameConfig.AutoNextStep;
 
 		/// <summary>
 		/// Gets the task stack.

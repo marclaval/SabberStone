@@ -169,6 +169,12 @@ namespace SabberStoneCore.Config
         public RandomController RandomController { get; set; } = new RandomController();
 
 		/// <summary>
+		/// Gets or sets a value indicating whether <see cref="Game"/> should execute the next step automatically.
+		/// </summary>
+		/// <value><c>true</c> if next step sould be executed automatically; otherwise, <c>false</c>.</value>
+		public bool AutoNextStep { get; set; } = true;
+
+		/// <summary>
 		/// Clones this instance.
 		/// </summary>
 		/// <returns></returns>
